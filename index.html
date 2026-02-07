@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roleta Surpresa do Amor 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <main class="app">
+    <header class="hero glass">
+      <h1>🎁 Roleta Surpresa para Minha Namorada</h1>
+      <p>
+        Gire a roleta e descubra um presente especial cheio de carinho.
+        Cada opção foi escolhida para transformar o dia em um momento inesquecível. ✨
+      </p>
+    </header>
+
+    <section class="wheel-section glass" aria-labelledby="titulo-roleta">
+      <h2 id="titulo-roleta">Roleta do Amor</h2>
+
+      <div class="wheel-wrapper">
+        <div class="pointer" aria-hidden="true"></div>
+        <div class="wheel" id="wheel"></div>
+      </div>
+
+      <button id="spin-btn" class="spin-btn">Girar a roleta 💫</button>
+      <p id="status" class="status" role="status" aria-live="polite">
+        Clique em “Girar a roleta” para começar a surpresa!
+      </p>
+    </section>
+
+    <section class="result-card glass" id="result-card" aria-live="polite">
+      <h3>Resultado da vez</h3>
+      <p id="result-title" class="result-title">💝 Aguardando o próximo giro...</p>
+      <p id="result-description" class="result-description">
+        Quando a roleta parar, você verá aqui os detalhes do presente escolhido.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
