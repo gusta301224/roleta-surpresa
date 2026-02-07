@@ -57,11 +57,13 @@ function buildWheel() {
 
   wheel.style.background = `conic-gradient(${gradientStops})`;
 
+  const radius = Math.min(window.innerWidth * 0.15, 88);
+
   prizes.forEach((prize, index) => {
     const label = document.createElement('span');
     label.className = 'segment-label';
     const baseAngle = index * angle + angle / 2;
-    label.style.transform = `rotate(${baseAngle - 90}deg) translate(${Math.min(window.innerWidth * 0.22, 110)}px, -50%)`;
+    label.style.transform = `translate(-50%, -50%) rotate(${baseAngle}deg) translateY(-${radius}px) rotate(${-baseAngle}deg)`;
     label.textContent = prize.label;
     wheel.appendChild(label);
   });
@@ -164,7 +166,7 @@ function spinWheel() {
 
   setTimeout(() => {
     const normalized = ((finalRotation % 360) + 360) % 360;
-    const pointerAngle = (360 - normalized + 90) % 360;
+    const pointerAngle = (360 - normalized + 180) % 360;
     const selectedIndex = Math.floor(pointerAngle / (360 / prizes.length)) % prizes.length;
     const selectedPrize = prizes[selectedIndex];
 
