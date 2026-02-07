@@ -79,7 +79,12 @@ function buildWheel() {
     label.className = 'segment-label';
     const baseAngle = index * angle + angle / 2;
     label.style.transform = `translate(-50%, -50%) rotate(${baseAngle}deg) translateY(-${radius}px) rotate(${-baseAngle}deg)`;
-    label.textContent = prize.label;
+    if (prize.retry) {
+      label.innerHTML = '<span class="retry-word">Tente</span><span class="retry-word">novamente</span>';
+      label.classList.add('retry-label');
+    } else {
+      label.textContent = prize.label;
+    }
     wheel.appendChild(label);
   });
 }
@@ -186,7 +191,7 @@ function spinWheel() {
 
   setTimeout(() => {
     const normalized = ((finalRotation % 360) + 360) % 360;
-    const pointerAngle = (360 - normalized + 180) % 360;
+    const pointerAngle = (450 - normalized) % 360;
     const selectedIndex = Math.floor(pointerAngle / (360 / prizes.length)) % prizes.length;
     const selectedPrize = prizes[selectedIndex];
 
