@@ -5,6 +5,12 @@ const prizes = [
     color: '#FF8EB0',
   },
   {
+    label: '🔁 Tente novamente',
+    description: 'Quase! Gira mais uma vez para buscar outro presente especial. 💞',
+    color: '#8F7CFF',
+    retry: true,
+  },
+  {
     label: '🍣 Sushi',
     description: 'Um jantar japonês delicioso para curtirmos juntinhos e brindar nosso amor.',
     color: '#B897FF',
@@ -18,6 +24,12 @@ const prizes = [
     label: '🍫 Chocolate',
     description: 'Uma seleção especial de chocolates para adoçar ainda mais seu dia.',
     color: '#FFD77A',
+  },
+  {
+    label: '🔁 Tente novamente',
+    description: 'Quase! Gira mais uma vez para buscar outro presente especial. 💞',
+    color: '#8F7CFF',
+    retry: true,
   },
   {
     label: '🎁 Presente surpresa',
@@ -180,7 +192,9 @@ function spinWheel() {
 
     resultTitleEl.textContent = `${selectedPrize.label}`;
     resultDescriptionEl.textContent = selectedPrize.description;
-    statusEl.textContent = `Resultado: ${selectedPrize.label}. Que momento especial! ✨`;
+    statusEl.textContent = selectedPrize.retry
+      ? 'Deu “tente novamente”! Vamos girar mais uma vez? 🔁'
+      : `Resultado: ${selectedPrize.label}. Que momento especial! ✨`;
 
     resultCard.classList.remove('pulse');
     void resultCard.offsetWidth;
@@ -188,9 +202,9 @@ function spinWheel() {
 
     if (canPlayAudio) {
       stopSpinSound();
-      playWinSound();
+      if (!selectedPrize.retry) playWinSound();
     }
-    launchConfetti();
+    if (!selectedPrize.retry) launchConfetti();
 
     currentRotation = finalRotation;
     spinning = false;
