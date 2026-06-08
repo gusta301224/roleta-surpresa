@@ -1,7 +1,7 @@
 const prizes = [
   {
-    label: '🍧 Açaí',
-    description: 'Um açaí caprichado com tudo que você ama: leite em pó, morango e muito carinho.',
+    label: 'Uma loja surpresa ',
+    description: 'Escolha uma loja, ou te levarei a uma para comprar o que quiser.',
     color: '#FF8EB0',
   },
   {
@@ -11,14 +11,14 @@ const prizes = [
     retry: true,
   },
   {
-    label: '🍣 Sushi',
-    description: 'Um jantar japonês delicioso para curtirmos juntinhos e brindar nosso amor.',
-    color: '#B897FF',
+    label: '🎁 Presente surpresa',
+    description: 'Uma surpresa pensada com amor — do jeitinho que você merece.',
+    color: '#7EF2C2',
   },
   {
-    label: '🍔 Lanche',
-    description: 'Aquele lanche perfeito, com refri e sobremesa para uma noite divertida.',
-    color: '#73D7FF',
+    label: '💖 Você escolhe',
+    description: 'Hoje quem manda é você! Escolha o presente e eu realizo com alegria.',
+    color: '#FFA7F6',
   },
   {
     label: '🍫 Chocolate',
@@ -32,7 +32,7 @@ const prizes = [
     retry: true,
   },
   {
-    label: '🎁 Presente surpresa',
+    label: '🎁 Date surpresa',
     description: 'Uma surpresa pensada com amor — do jeitinho que você merece.',
     color: '#7EF2C2',
   },
